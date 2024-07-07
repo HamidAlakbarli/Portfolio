@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Me - Hamid Alakbarli</title>
+    <!-- CSS Files -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/color-1.css') }}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    <link rel="stylesheet" href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!--===Header Start===-->
+    <div class="header">
+        <a href="{{ url_for('home') }}"><img class="logoimage" src="{{ url_for('static', filename='images/logo.png') }}" alt="Logo"></a>
+        <nav class="navbar">
+            <a href="{{ url_for('home') }}">Home</a>
+            <a href="{{ url_for('about') }}">About</a>
+            <a href="{{ url_for('activities') }}">Activities</a>
+            <a href="{{ url_for('portfolio') }}">Portfolio</a>
+            <a class="active" href="{{ url_for('contact') }}">Contact</a>
+        </nav>
+    </div>
+    <!--===Header End===-->
+    
+    <!--===Contact Me section Start===-->
+    <section class="contact-section">
+        <div class="container">
+            <div class="section-title padd-15">
+                <h2>Contact Me</h2>
+            </div>
+            <div class="contact-info">
+                <p><strong class="contact-infoo">ADDRESS:</strong> Baku, Azerbaijan</p>
+                <p><strong class="contact-infoo">EMAIL:</strong> hamid.alakbar09052022@outlook.com</p>
+                <p><strong class="contact-infoo">WEBSITE:</strong> www.hamidalakbarli.com</p>
+            </div>
+            <div class="contact-form">
+                <form action="{{ url_for('contact') }}" method="POST">
+                    <div class="form-group">
+                        <label for="name">NAME</label>
+                        <input type="text" id="name" name="name" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="email">EMAIL</label>
+                        <input type="email" id="email" name="email" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="message">MESSAGE</label>
+                        <textarea id="message" name="message" rows="5" required></textarea>
+                    </div>
+                    <button type="submit" class="btn" id="sendmessage">Send Message</button>
+                </form>
+            </div>
+        </div>
+    </section>
+    <!--===Contact Me section End===-->
+    
+    <!--===JS Files===-->
+    <script src="{{ url_for('static', filename='js/script.js') }}"></script>
+</body>
+</html>

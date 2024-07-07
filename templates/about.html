@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Me - Hamid Alakbarli</title>
+    <!-- CSS Files -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/color-1.css') }}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    <link rel="stylesheet" href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!--===Header Start===-->
+    <div class="header">
+        <a href="{{ url_for('home') }}"><img class="logoimage" src="{{ url_for('static', filename='images/logo.png') }}" alt="Logo"></a>
+        <nav class="navbar">
+            <a href="{{ url_for('home') }}">Home</a>
+            <a class="active" href="{{ url_for('about') }}">About</a>
+            <a href="{{ url_for('activities') }}">Activities</a>
+            <a href="{{ url_for('portfolio') }}">Portfolio</a>
+            <a href="{{ url_for('contact') }}">Contact</a>
+        </nav>
+    </div>
+    <!--===Header End===-->
+    
+    <!--===About Me section Start===-->
+    <section class="about-section">
+        <div class="container">
+            <div class="section-title padd-15">
+                <h2>About Me</h2>
+            </div>
+            <div class="row">
+                <div class="about-content">
+                    <h1>I'm Hamid Alakbarli</h1>
+                    <h3>Student at Boston University</h3>
+                    <p>Diligent and passionate Computer Science student at Boston University, currently interning at the International Bank of Azerbaijan, in Data Science Chapter. Possessing a solid foundation in programming languages including Python, Java, HTML, C, and Assembly, I have hands-on experience in software development and AI projects. Driven by a desire to contribute to the growth of innovative organizations, I am keen to gain invaluable industry experience and make a positive impact. I aspire to leverage technology to address and solve environmental challenges, aiming to create a better and more sustainable world.</p>
+                    <ul class="info-list">
+                        <li><strong>UNIVERSITY:</strong> Boston University</li>
+                        <li><strong>MAJOR:</strong> Computer Science</li>
+                        <li><strong>CITY OF BIRTH:</strong> Baku, Azerbaijan</li>
+                        <li><strong>LANGUAGES:</strong> Azerbaijani, Russian, English, Turkish</li>
+                        <li><strong>TECHNICAL PROFICIENCIES:</strong> Python, C, Java, HTML/CSS, JavaScript, Assembly, Arduino IDE, Ubuntu</li>
+                        <li><strong>Systems/tools: </strong> Visual Studio, Git, PyCharm, PyScripter, Ubuntu, Google Colab</li>
+                        <li><strong>EMAIL: </strong> hamid.alakbar09052022@outlook.com</li>
+                    </ul>
+                </div>
+                <div class="education-experience">
+                    <div class="education">
+                        <h3 class="title">Education</h3>
+                        <div class="box">
+                            <div class="box-content">
+                                <h4>Boston University</h4>
+                                <p>Bachelor of Science in Computer Science</p>
+                                <p><strong>2024 - 2026 (Expected)</strong></p>
+                            </div>
+                        </div>
+                        <div class="box">
+                            <div class="box-content">
+                                <h4>American University</h4>
+                                <p>Transferred after 2nd year</p>
+                                <p><strong>2022 - 2024</strong></p>
+                            </div>
+                        </div>
+                        <div class="box">
+                            <div class="box-content">
+                                <h4>Harvard Extension School</h4>
+                                <p>Bachelor of Science in Computer Science</p>
+                                <p><strong>2024 - 2026 (Expected)</strong></p>
+                            </div>
+                        </div>
+                        <div class="box">
+                            <div class="box-content">
+                                <h4>University of Cambridge</h4>
+                                <p>Cambridge Summer Research Programme in AI and Computer Science </p>
+                                <p><strong>July 2023 - July 2023</strong></p>
+                            </div>
+                        </div>
+                        <div class="box">
+                            <div class="box-content">
+                                <h4>Code Academy</h4>
+                                <p>Bachelor of Science in Computer Science</p>
+                                <p><strong>2024 - 2026 (Expected)</strong></p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="experience">
+                        <h3 class="title">Experience</h3>
+                        <div class="box">
+                            <div class="box-content">
+                                <h4>International Bank of Azerbaijan (ABB)</h4>
+                                <p>Intern - Data Science Chapter</p>
+                                <p><strong>June 2024 - Present</strong></p>
+                            </div>
+                        </div>
+                        <div class="box">
+                            <div class="box-content">
+                                <h4>Mugan Bank OJSC</h4>
+                                <p>Intern, Project: “Reconstruction of official web-site of the Bank”</p>
+                                <p><strong>Mar 2022 - Apr 2022</strong></p>
+                            </div>
+                        </div>
+                        <div class="box">
+                            <div class="box-content">
+                                <h4>BestComp Group</h4>
+                                <p>Intern, Project: “Consultancy on the website structure of Group companies”</p>
+                                <p><strong>Feb 2022 - Mar 2022</strong></p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!--===About Me section End===-->
+    
+    <!--===JS Files===-->
+    <script src="{{ url_for('static', filename='js/script.js') }}"></script>
+</body>
+</html>

@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Activities - Hamid Alakbarli</title>
+    <!-- CSS Files -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/activities.css') }}">
+</head>
+<body>
+    <!--===Header Start===-->
+    <div class="header">
+        <a href="{{ url_for('home') }}"><img class="logoimage" src="{{ url_for('static', filename='images/logo.png') }}" alt="Logo"></a>
+        <nav class="navbar">
+            <a href="{{ url_for('home') }}">Home</a>
+            <a href="{{ url_for('about') }}">About</a>
+            <a class="active" href="{{ url_for('activities') }}">Activities</a>
+            <a href="{{ url_for('portfolio') }}">Portfolio</a>
+            <a href="{{ url_for('contact') }}">Contact</a>
+        </nav>
+    </div>
+    <!--===Header End===-->
+
+    <!--===Activities Section Start===-->
+    <section class="activities-section">
+        <div class="container">
+            <div class="section-title padd-15">
+                <h2>Activities</h2>
+            </div>
+            <div class="activities-content">
+                <div class="activity-box">
+                    <h3>Active member in the Dean's student Advisory Council at American University</h3>
+                    <p>Date: Sep 2023 - May 2024</p>
+                    <p>• Identifying and communicating undergraduate concerns to the Dean's Office, actively bridging gaps between student needs and university policies.
+                        <br>• Acting as a liaison for transparent communication between students and the College of Arts and Sciences, enhancing responsiveness to student feedback</p>
+                    <a href="https://www.american.edu/cas/advising/student-advisory-council.cfm" target="_blank" class="btn">View Link</a>
+                </div>
+                <div class="activity-box">
+                    <h3>Active member of The Robotics Club at American University</h3>
+                    <p>Date: Jan 2023 - May 2024 </p>
+                    <p>• Demonstrate leadership skills while working with 3D printed robot assistants for DaBl and Dolores, front desk robot assistant at American University’s Institution for IDEAS, to gain experience in the application of robotics technology
+                    • Continuously competing in the VEX u Robotics Competition, enhancing skills in robotics design, engineering and teamwork</p>
+                </div>
+                <div class="activity-box">
+                    <h3>Volunteer, Event management <br>(Formula 1) </h3>
+                    <p>Date: May 2022 - Jun 2022</p>
+                    <p>• Shared responsibility for managing the process of leading volunteers to the event venue 
+                    • Initiated the scheme for proper allocation of duties and responsibilities for volunteers</p>
+                    <a href="{{ url_for('static', filename='images/Həmid Ələkbərli Ada university certificate.pdf') }}" download class="btn">Download Certificate</a>
+                </div>
+                <div class="activity-box">
+                    <h3>Active member of The Design and Build Lab at American University</h3>
+                    <p>Date: Sep 2022 - Mar 2023 </p>
+                    <p>• Worked with programmable electronics which used to be expensive and difficult to learn options for designing and fabrication physical objects
+                        • Learned how to design for and operate these machines through the completion of multiple projects in hands-on, laboratory-based approach
+                        • Learned technical skills, practical constraints, and the methods of troubleshooting associated with these fabrication</p>
+                </div>
+                <div class="activity-box">
+                    <h3>Active member of The Turkic Cultural Club at American University</h3>
+                    <p>Date: Jan 2023 - May 2024</p>
+                    <p>• Facilitate intercultural exchange through collaborative initiatives with other cultural clubs and organization to promote mutual understanding and respect for diverse cultural heritage 
+                        • Foster an inclusive and diverse community through education and understanding
+                        • Offer students a unique opportunity to celebrate and immerse themselves in the rich cultural heritage of the Turkic community, including its customs, traditions and values</p>
+                </div>
+                <div class="activity-box">
+                    <h3>Mugan Bank OJSC</h3>
+                    <p>Mar 2022 - Apr 2022</p>
+                    <p>Intern, Project: “Reconstruction of official web-site of the Bank”</p>
+                    <a href="{{ url_for('static', filename='images/MuganBank OJSC.pdf') }}" download class="btn">Download Certificate</a>
+                    <a href="{{ url_for('static', filename='images/Recommendation letter_Hamid.pdf') }}"  id="Download" class="btn">Download Recommendation Letter</a>
+                </div>
+                <div class="activity-box">
+                    <h3>BestComp Group</h3>
+                    <p>Feb 2022 - Mar 2022</p>
+                    <p>Intern, Project: “Consultancy on the website structure of Group companies”</p>
+                    <a href="{{ url_for('static', filename='images/BestComp_Certificate.pdf') }}" download class="btn">Download Certificate</a>
+                </div>
+                <div class="activity-box">
+                    <h3>University of Cambridge</h3>
+                    <p>July 2023 - July 2023</p>
+                    <p>Cambridge Summer Research Programme in AI and Computer Science</p>
+                    <a href="{{ url_for('static', filename='images/Hamid Alakbarli_CC.pdf') }}" download class="btn">Download Certificate</a>
+                    <a href="{{ url_for('static', filename='images/Ref Hamid Alakbarli (1).pdf') }}"  id="Download" class="btn">Download Recommendation Letter</a>
+                </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!--===Activities Section End===-->
+
+    <!--===JS Files===-->
+    <script src="{{ url_for('static', filename='js/script.js') }}"></script>
+</body>
+</html>

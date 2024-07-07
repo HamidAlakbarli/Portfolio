@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio</title>
+    <!-- CSS Files -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/color-1.css') }}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    <link rel="stylesheet" href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!--===Header Start===-->
+    <div class="header">
+        <a href="{{ url_for('home') }}"><img class="logoimage" src="{{ url_for('static', filename='images/logo.png') }}" alt="Logo"></a>
+        <nav class="navbar">
+            <a href="{{ url_for('home') }}">Home</a>
+            <a href="{{ url_for('about') }}">About</a>
+            <a href="{{ url_for('activities') }}">Activities</a>
+            <a class="active" href="{{ url_for('portfolio') }}">Portfolio</a>
+            <a href="{{ url_for('contact') }}">Contact</a>
+        </nav>
+    </div>
+    <!--===Header End===-->
+
+    <!--===Portfolio Section Start===-->
+    <section class="portfolio-section">
+        <div class="container">
+            <div class="section-title">
+                <h2>Portfolio</h2>
+            </div>
+            <div class="portfolio-content">
+                <div class="portfolio-box">
+                    <div class="portfolio-img" style="background-image: url('{{ url_for('static', filename='images/Technology.jpg') }}');"></div>
+                    <h3>AIDetect: Predicting Behavioral Indicators of Crime</h3>
+                    <a href="https://github.com/Greyzlion1/AI_Detect" class="btn">View on GitHub</a>
+                </div>
+                <div class="portfolio-box">
+                    <div class="portfolio-img" style="background-image: url('{{ url_for('static', filename='images/dataset.jpg') }}');"></div>
+                    <h3>Dataset 50K movie reviews project</h3>
+                    <a href="https://github.com/Greyzlion1/Dataset-50K-movie-reviews-project" class="btn">View on GitHub</a>
+                </div>
+                <div class="portfolio-box">
+                    <div class="portfolio-img" style="background-image: url('{{ url_for('static', filename='images/Convolutional_Neural_Network_l.jpg') }}');"></div>
+                    <h3>Image Classification Project</h3>
+                    <a href="https://github.com/Greyzlion1/Image_Classification-Project" class="btn">View on GitHub</a>
+                </div>
+                <div class="portfolio-box">
+                    <div class="portfolio-img" style="background-image: url('{{ url_for('static', filename='images/rock.webp') }}');"></div>
+                    <h3>Game</h3>
+                    <a href="https://rpsh.netlify.app" class="btn">View Link</a>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!--===Portfolio Section End===-->
+
+    <!--===JS Files===-->
+    <script src="{{ url_for('static', filename='js/script.js') }}"></script>
+</body>
+</html>
