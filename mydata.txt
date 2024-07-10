@@ -1,0 +1,30 @@
+My name is Hamid. I am a computer science student at Boston University. I am originally from Azerbaijan and I am passionate about technology and innovation. I enjoy playing soccer and basketball. I am currently doing a data science internship at the International Bank of Azerbaijan in DATA Science Chapter, specializing in AI and software engineering. I have a solid foundation in programming languages including Python, Java, HTML, C, and Assembly.
+Early Fascination with Technology
+My journey into the world of technology began in my childhood when my father, an early adopter of technology, brought home a computer. This machine fascinated me and sparked my lifelong interest in IT. My father became my guide, teaching me the nuances of using the computer and fueling my curiosity.
+
+Educational Background
+American University
+I began my higher education journey at the American University in Washington, D.C., where I pursued a Bachelor of Science in Computer Science for two years and later on trasnfere to Boston Univerist in 2024. I studied in American university from 2022-2024. My coursework included fundamentals of computer science, mathematics, and physics. I became an active member of the Robotics Club, where I honed my skills in robotics design, engineering, and teamwork.
+
+Code Academy
+Before attending university, I enrolled in a software development course at Code Academy in Baku, Azerbaijan. There, I developed dynamic websites using JavaScript, HTML, and CSS and formed object-oriented C# programs using Visual Studio. I also created databases in SQL Server and integrated them with C# programs.
+
+University of Cambridge
+In the summer of 2023, I participated in the Cambridge Summer Research Programme in AI and Computer Science at the University of Cambridge. I attended lectures on neural networks, deep learning, transformers, language models, deep reinforcement learning, and machine learning techniques. I collaborated on a project titled "AIDetect: Predicting Behavioral Indicators of Crime," playing a leading role in both project management and code development.
+
+Harvard Extension
+I was student at Harvard Extension, taking a data structures course where I utilize Java programming to master classic algorithms and focus on lists, stacks, queues, trees, and graphs.
+Professional Experience
+Internships
+BestComp Group: I interned on a project to provide consultancy on the website structure of group companies, checking for deficiencies and bugs and providing solid recommendations for improvements.
+
+Mugan Bank OJSC: I worked in a team to redesign the bank's website, adding new marketing products and services and improving user-friendliness.
+
+
+
+Skills and Interests
+I have a solid foundation in several programming languages, including Python, Java, HTML, C, Assembly, and C#. My technical skills extend to systems/tools like Visual Studio, Git, PyCharm, and PyScripter, and I am proficient in Microsoft Office Suite and PowerPoint.
+
+Beyond academics and professional work, I enjoy playing soccer and basketball, reading, and staying fit. I am passionate about making new friends and connections, which enriches my personal and professional life.
+
+If you have a different question which I did not answered send me email in the contact section.

@@ -35,7 +35,7 @@
                 <div class="about-content">
                     <h1>I'm Hamid Alakbarli</h1>
                     <h3>Student at Boston University</h3>
-                    <p>Diligent and passionate Computer Science student at Boston University, currently interning at the International Bank of Azerbaijan, in Data Science Chapter. Possessing a solid foundation in programming languages including Python, Java, HTML, C, and Assembly, I have hands-on experience in software development and AI projects. Driven by a desire to contribute to the growth of innovative organizations, I am keen to gain invaluable industry experience and make a positive impact. I aspire to leverage technology to address and solve environmental challenges, aiming to create a better and more sustainable world.</p>
+                    <p>Diligent and passionate international student from Azerbaijan majoring in Computer Science at Boston University. My journey into the world of technology began with my father bringing home a computer, which ignited my lifelong fascination with IT. This early exposure led me to develop a strong foundation in programming languages. I am passionate about cloud computing, AI/machine learning and software enginering.  Besides my academic and professional pursuits, I enjoy playing soccer and basketball, making new friends, and staying fit. </p>
                     <ul class="info-list">
                         <li><strong>UNIVERSITY:</strong> Boston University</li>
                         <li><strong>MAJOR:</strong> Computer Science</li>
@@ -53,21 +53,21 @@
                             <div class="box-content">
                                 <h4>Boston University</h4>
                                 <p>Bachelor of Science in Computer Science</p>
-                                <p><strong>2024 - 2026 (Expected)</strong></p>
+                                <p><strong>Sep 2024 - May 2026 (Expected)</strong></p>
                             </div>
                         </div>
                         <div class="box">
                             <div class="box-content">
                                 <h4>American University</h4>
                                 <p>Transferred after 2nd year</p>
-                                <p><strong>2022 - 2024</strong></p>
+                                <p><strong>Aug 2022 - May 2024</strong></p>
                             </div>
                         </div>
                         <div class="box">
                             <div class="box-content">
                                 <h4>Harvard Extension School</h4>
-                                <p>Bachelor of Science in Computer Science</p>
-                                <p><strong>2024 - 2026 (Expected)</strong></p>
+                                <p>Data Structures course</p>
+                                <p><strong>January 2024 - May 2024</strong></p>
                             </div>
                         </div>
                         <div class="box">
@@ -80,8 +80,8 @@
                         <div class="box">
                             <div class="box-content">
                                 <h4>Code Academy</h4>
-                                <p>Bachelor of Science in Computer Science</p>
-                                <p><strong>2024 - 2026 (Expected)</strong></p>
+                                <p>Software Development course</p>
+                                <p><strong>Jan 2022 - July2022</strong></p>
                             </div>
                         </div>
                     </div>
@@ -111,11 +111,26 @@
                     </div>
                 </div>
             </div>
+            <!--===ChatBot Section Start===-->
+        <div class="chat-icon" onclick="toggleChat()">
+            <i id="icon-chatbot" class='bx bxs-bot'></i>
+        </div>
+        <div class="chat-container" id="chat-container">
+            <div class="chat-header">
+                <h2>Chat with Hamid</h2>
+                <span class="close-chat" onclick="toggleChat()">&times;</span>
+            </div>
+            <div class="chat-box" id="chat-box"></div>
+            <input type="text" class="chat-input" id="chat-input" placeholder="Type your question..." onkeypress="checkEnter(event)">
+            <button class="send-button" onclick="sendMessage()">Send</button>
+        </div>
+        <!--===ChatBoT Section End===-->
         </div>
     </section>
     <!--===About Me section End===-->
     
     <!--===JS Files===-->
     <script src="{{ url_for('static', filename='js/script.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/chatbot.js') }}"></script>
 </body>
 </html>

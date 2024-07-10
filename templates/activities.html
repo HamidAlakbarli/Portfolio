@@ -85,11 +85,26 @@
                 </div>
                 </div>
             </div>
+             <!--===ChatBot Section Start===-->
+        <div class="chat-icon" onclick="toggleChat()">
+            <i id="icon-chatbot" class='bx bxs-bot'></i>
+        </div>
+        <div class="chat-container" id="chat-container">
+            <div class="chat-header">
+                <h2>Chat with Hamid</h2>
+                <span class="close-chat" onclick="toggleChat()">&times;</span>
+            </div>
+            <div class="chat-box" id="chat-box"></div>
+            <input type="text" class="chat-input" id="chat-input" placeholder="Type your question..." onkeypress="checkEnter(event)">
+            <button class="send-button" onclick="sendMessage()">Send</button>
+        </div>
+        <!--===ChatBoT Section End===-->
         </div>
     </section>
     <!--===Activities Section End===-->
 
     <!--===JS Files===-->
     <script src="{{ url_for('static', filename='js/script.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/chatbot.js') }}"></script>
 </body>
 </html>

@@ -786,4 +786,87 @@ body {
 margin-top: 20px;
 }
 
+/* ChatBot */
+.chat-icon {
+    position: fixed;
+    bottom: 60px;
+    right: 60px;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    background-color: #0ef;;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    z-index: 1000;
+    transition: background-color 0.3s ease; /* Added transition for smooth hover effect */
+}
+
+
+#icon-chatbot {
+    font-size: 50px;
+    color: rgb(31, 70, 160);
+}
+
+.chat-container {
+    position: fixed;
+    bottom: 120px;
+    right: 60px;
+    width: 400px;
+    max-width: 100%;
+    height: 500px;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    background-color: #0c1022;
+    display: none;
+    flex-direction: column;
+    z-index: 1000;
+}
+
+.chat-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    background-color: #0c1022;
+    color: #fff;
+    border-radius: 10px 10px 0 0;
+}
+
+.chat-box {
+    flex: 1;
+    padding: 10px;
+    border-top: 1px solid #ccc;
+    overflow-y: auto;
+    color: #fff;
+    background-color: #0c1022;
+}
+
+.chat-input {
+    width: calc(100% - 20px);
+    padding: 10px;
+    margin: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: #1f1f1f;
+    color: #fff;
+}
+
+.send-button {
+    padding: 10px 20px;
+    margin: 10px;
+    background-color: #0ef;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.close-chat {
+    cursor: pointer;
+    font-size: 24px;
+    line-height: 24px;
+    color: #fff;
+}
+
 /* Responsive CSS for iPads */
