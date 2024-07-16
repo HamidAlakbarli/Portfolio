@@ -28,7 +28,7 @@ app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 db = SQLAlchemy(app)
 
 # Set OpenAI API key
-os.environ["OPENAI_API_KEY"] ="sk-None-irNcXdW8xy2thLGAjNFOT3BlbkFJpM8hHi35GusDckqYwflv"
+os.environ["OPENAI_API_KEY"] = os.getenv("OPENAI_API_KEY")
 
 # Load data from a text file
 loader = TextLoader("mydata.txt")
