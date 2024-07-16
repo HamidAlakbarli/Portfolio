@@ -88,6 +88,7 @@ body {
     font-weight: 700;
     line-height: 1.2;
     transition: color 0.3s;
+    animation-delay:0.5s;
 }
 
 .home-content h3 {
@@ -95,12 +96,14 @@ body {
     font-weight: 700;
     margin-bottom: 35px;
     transition: color 0.3s;
+    animation-delay:0.9s;
 }
 
 .home-content p {
     font-size: 18px;
     margin-bottom: 30px;
     transition: color 0.3s;
+    animation-delay:1.5s;
 }
 
 .btn {
@@ -139,13 +142,15 @@ body {
 .btn:hover::before {
     width: 100%;
 }
-.home{
-    
+.ending a{
+    animation-delay:2s;
 }
+
 .home-logs {
     display: inline-flex;
     align-items: center;
     margin-left: 10px;
+    animation-delay:2s;
 }
 
 .home-logs a {
@@ -192,6 +197,8 @@ body {
     justify-content: flex-end; /* Align the image to the right */
     align-items: center;
     padding-top: 108px;
+    animation-delay:2.8s;
+    user-select: none; 
 }
 
 .home-image img {
@@ -200,8 +207,12 @@ body {
     border-radius: 50%;
     border: 5px solid #0ef;
     object-fit: cover;
+    user-select: none; \
+    transition: border 0.3s ease;
 }
-
+.home-image img:hover{
+    border: 8px solid #0ef;
+}
 /* Keyframes for fade-in animation */
 @keyframes fadeIn {
     to {
@@ -323,15 +334,15 @@ body {
 }
 
 .education {
-    width: 50%; /* Adjusted width to make space for experience */
+    width: 43%; /* Adjusted width to make space for experience */
 }
 
 .experience {
-    width: 50%; /* Adjusted width to fit both columns side by side */
+    width: 44%; /* Adjusted width to fit both columns side by side */
 }
 
 .title {
-    font-size: 48px; /* Adjusted font size */
+    font-size: 40px; /* Adjusted font size */
     font-weight: 700;
     margin-bottom: 20px;
     transition: color 0.3s;
@@ -794,19 +805,31 @@ margin-top: 20px;
     width: 60px;
     height: 60px;
     border-radius: 50%;
-    background-color: #0ef;;
+    background-color: rgba(12, 16, 34, 0.9);
     display: flex;
     justify-content: center;
     align-items: center;
     cursor: pointer;
     z-index: 1000;
-    transition: background-color 0.3s ease; /* Added transition for smooth hover effect */
+    transition: background-color 0.3s ease, transform 0.3s ease; /* Added transition for smooth hover effect */
+    border: 2px solid #0ef; /* Corrected the border property */
 }
 
-
 #icon-chatbot {
-    font-size: 50px;
-    color: rgb(31, 70, 160);
+    font-size: 43px;
+    color: #0ef;
+    transition: color 0.3s ease, transform 0.3s ease; /* Added transition for smooth hover effect */
+}
+
+/* Hover Effect */
+.chat-icon:hover {
+    background-color: #0ef; /* Change background color on hover */
+    transform: scale(1.1); /* Increase size slightly on hover */
+}
+
+.chat-icon:hover #icon-chatbot {
+    color: #0c1022; /* Change icon color on hover */
+    transform: scale(1.2); /* Increase icon size slightly on hover */
 }
 
 .chat-container {
@@ -869,4 +892,812 @@ margin-top: 20px;
     color: #fff;
 }
 
-/* Responsive CSS for iPads */
+.open-menu, .close-menu{
+    position: absolute;
+    color: white;
+    cursor: pointer;
+    font-size: 31px;
+    display: none;
+}
+.open-menu{
+    top: 50%;
+    right: 20px;
+    transform: translateY(-50%);
+}
+.close-menu{
+    top: 60px;
+    right: 20px;
+}
+#check{
+    display: none;
+}
+
+@media(max-width:767px){
+    .activities-section .activities-content .activity-box{
+        flex: 0 0 100%;
+        max-width: 90%;
+    }
+    .activities-section{
+        margin-bottom: 60px;
+    }
+    .about-section{
+        margin-bottom: 60px; 
+    }
+    .activities-section{
+        margin-bottom: 60px; 
+    }
+    .contact-section{
+        margin-bottom: 65px; 
+    }
+
+    .about-content, .education-experience {
+        order: 0;
+        flex: 0 0 100%;
+        max-width: 100%;
+        margin-top: 10px;
+        overflow-x: hidden;
+        display: flex;
+        flex-direction: column;
+        align-items: center; /* Center align the content */
+    }
+
+    .about-content {
+        padding: 0; /* Remove any padding */
+        margin: 0; /* Remove any margin */
+    }
+
+    .about-content h1 {
+        font-size: 34px;
+        text-align: center; /* Center the text */
+        margin: 0; /* Remove any margin */
+        max-width: 90%;
+    }
+
+    .about-content h3 {
+        font-size: 20px;
+        text-align: center; /* Center the text */
+        margin: 0; /* Remove any margin */
+        max-width: 90%;
+    }
+
+    .about-content p {
+        font-size: 15px;
+        text-align: center; /* Center the text */
+        margin: 0; /* Remove any margin */
+        padding-top: 20px;
+        padding-bottom: 20px;
+        max-width: 85%;
+    }
+
+    .info-list {
+        list-style-type: none; /* Remove default list styling */
+        padding: 0; /* Remove default padding */
+        margin: 0; /* Remove any margin */
+        text-align: center; /* Center align the list */
+        max-width: 85%;
+    }
+
+    .info-list li {
+        font-size: 14px;
+        margin-bottom: 5px; /* Add some spacing between list items */
+    }
+    
+    .education-experience {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
+        max-width: 100%;
+        padding-left: 0;
+    }
+
+    .education, .experience {
+        width: 100%;
+        max-width: 100%;
+        text-align: center; /* Center the titles */
+    }
+
+    .education .box, .experience .box {
+        width: 90%; /* Adjust to match the other sections */
+        max-width: 90%; /* Ensure it doesn't exceed the container */
+        margin: 10px auto; /* Center the boxes and add margin between them */
+        position: relative;
+    }
+
+    /* Remove the small circle on the left side of the boxes */
+    .education .box::before, .experience .box::before {
+        content: none;
+    }
+
+
+    .home {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        max-width: 100%;
+        height: 100%;
+        margin-bottom: 69px;
+    }
+
+    .home-image {
+        order: -1; /* Move the image to the top */
+        flex: 0 0 100%;
+        max-width: 100%;
+        position: relative;
+        margin-top: 41px;
+        text-align: center;
+        animation-delay:0.3s;
+    }
+
+    .home-image img {
+        order: -1;
+        height: 180px;
+        width: 180px;
+        border-radius: 50%;
+        border: 3px solid #0ef;
+        object-fit: cover;
+    }
+
+    .home-content {
+        order: 0;
+        flex: 0 0 100%;
+        max-width: 100%;
+        text-align: center;
+        margin-top: -110px;
+    }
+
+    .home-content h1 {
+        font-size: 36px;
+        padding-top: 10px; /* Reduce padding */
+        animation-delay:0.9s;
+    }
+
+    .home-content h3 {
+        font-size: 19px;
+        margin-top: 5px; /* Reduce margin */
+        animation-delay:1.5s;
+    }
+
+    .home-content p {
+        font-size: 15px;
+        margin-top: 5px; /* Reduce margin */
+        animation-delay:1.9s;
+    }
+
+    #btnbutton {
+        font-size: 14px;
+        width: auto;
+        padding: 5px 10px;
+        text-align: center;
+        cursor: pointer;
+        overflow: hidden;
+        margin-bottom: 5px; /* Reduce margin */
+        animation-delay:2.5s;
+    }
+    .btn::before {
+        content: none; /* Remove the rectangular hover effect */
+    }
+
+
+    .home-logs {
+        order: 1;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-wrap: nowrap;
+        margin-left: 10px; /* Adjust to align with button */
+        animation-delay:3s;
+    }
+
+    #linksbuttons {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        width: 30px;
+        height: 30px;
+        color: #0ef;
+        background-color: #0c1022;
+        font-size: 17px;
+        text-decoration: none;
+        border: 2px solid #0ef;
+        border-radius: 50%;
+        margin: 0 5px; /* Adjust margin */
+    }
+
+    .navbar {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        width: 80%;
+        height: 100vh;
+        position: fixed;
+        top: 0;
+        right: -100%;
+        z-index: 100;
+        background-color:#0a1a33; 
+        transition: all 0.2s ease-in-out;
+        margin-top: -10px;
+    }
+    #check:checked ~ .navbar{
+     right: 0;
+    }
+        
+    .navbar a{
+        padding-top: 29px;
+        font-size: 25px;
+        margin-bottom: 10px;
+    }
+    .open-menu, .close-menu{
+        display: block;
+    }
+     
+    .portfolio-section .portfolio-content .portfolio-box{
+        flex: 0 0 100%;
+        max-width: 88%;
+    }
+    .portfolio-content{
+        margin-top: 10px;   
+    }
+    /* ChatBot */
+.chat-icon {
+    position: fixed;
+    bottom: 40px;
+    right: 18px;
+    width: 43px;
+    height: 43px;
+}
+
+#icon-chatbot {
+    font-size: 37px;
+}
+
+.chat-container {
+    position: fixed;
+    bottom: 70px;
+    right: 34px;
+    width: 340px;
+    max-width: 80%;
+    height: 340px;
+}
+
+.chat-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    background-color: #0c1022;
+    color: #fff;
+    border-radius: 10px 10px 0 0;
+}
+
+.chat-box {
+    flex: 1;
+    padding: 10px;
+    border-top: 1px solid #ccc;
+    overflow-y: auto;
+    color: #fff;
+    background-color: #0c1022;
+}
+
+.chat-input {
+    width: calc(100% - 20px);
+    padding: 10px;
+    margin: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: #1f1f1f;
+    color: #fff;
+}
+
+.send-button {
+    padding: 10px 20px;
+    margin: 10px;
+    background-color: #0ef;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.close-chat {
+    cursor: pointer;
+    font-size: 24px;
+    line-height: 24px;
+    color: #fff;
+}
+    .contact-info p{
+        font-size: 17px;
+        max-width: 100%;
+    }
+
+    .chat-icon:hover {
+        background-color: inherit; /* Keep the same background color */
+        transform: none; /* Remove the scaling effect */
+    }
+
+    .chat-icon:hover #icon-chatbot {
+        color: inherit; /* Keep the same icon color */
+        transform: none; /* Remove the scaling effect */
+    }
+    
+}
+@media (min-width:768px) and (max-width:1024px){
+    .activities-section .activities-content .activity-box {
+        flex: 0 0 100%; /* Two boxes per row */
+        max-width: 48%;
+        margin: 1%;
+    }
+    .section-title h2{
+        font-size: 90px;
+        margin-top: 10px;
+    }
+    .activity-box h3{
+        font-size: 33px;
+    }
+    .activity-box p{
+        font-size: 25px;
+    }
+    .activity-box a{
+        font-size: 25px;
+    }
+
+    .activities-section, .about-section, .contact-section {
+        margin-bottom: 80px; /* Increase bottom margin */
+    }
+
+    .about-content, .education-experience {
+        order: 0;
+        flex: 0 0 100%;
+        max-width: 100%;
+        margin-top: 10px;
+        overflow-x: hidden;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .about-content {
+        padding: 0;
+        margin: 0;
+    }
+    .about-section{
+        margin-top: 20px;
+    }
+    .about-section h2{
+        font-size: 89px;
+    }
+
+    .about-content h1 {
+        font-size: 60px; /* Increase font size */
+        text-align: center;
+        margin: 0;
+        max-width: 90%;
+    }
+
+    .about-content h3 {
+        font-size: 38px; /* Increase font size */
+        text-align: center;
+        margin: 0;
+        max-width: 90%;
+    }
+
+    .about-content p {
+        font-size: 28px; /* Increase font size */
+        text-align: center;
+        margin: 0;
+        padding-top: 20px;
+        padding-bottom: 20px;
+        max-width: 85%;
+    }
+
+    .info-list {
+        list-style-type: none;
+        padding: 0;
+        margin: 0;
+        text-align: center;
+        max-width: 85%;
+    }
+
+    .info-list li {
+        font-size: 27px; /* Increase font size */
+        margin-bottom: 5px;
+    }
+
+    .education-experience {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: center;
+        width: 100%;
+        max-width: 100%;
+        padding-left: 0;
+        align-items: flex-start;
+    }
+
+    .education, .experience {
+        width: 48%;
+        max-width: 48%;
+        text-align: center;
+        margin: 1%;
+    }
+
+    .education .box, .experience .box {
+        width: 100%;
+        max-width: 100%;
+        margin: 10px auto;
+        position: relative;
+    }
+
+    .education .box::before, .experience .box::before {
+        content: none;
+    }
+    .box-content h4{
+        font-size: 35px;
+    }
+    .box-content p{
+        font-size: 30px; 
+    }
+    .home {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        max-width: 100%;
+        height: 100%;
+        margin-bottom: 20px; /* Increase bottom margin */
+    }
+
+    .home-image {
+        order: -1;
+        flex: 0 0 100%;
+        max-width: 100%;
+        position: relative;
+        margin-top: 69px;
+        text-align: center;
+        animation-delay: 0.3s;
+    }
+
+    .home-image img {
+        order: -1;
+        height: 320px; /* Increase image size */
+        width: 320px; /* Increase image size */
+        border-radius: 50%;
+        border: 5px solid #0ef;
+        object-fit: cover;
+    }
+
+    .home-content {
+        order: 0;
+        flex: 0 0 100%;
+        max-width: 100%;
+        text-align: center;
+        margin-top: -90px;
+    }
+
+    .home-content h1 {
+        font-size: 53px; /* Increase font size */
+        padding-top: 10px;
+        animation-delay: 0.9s;
+    }
+
+    .home-content h3 {
+        font-size: 39px; /* Increase font size */
+        margin-top: 5px;
+        animation-delay: 1.5s;
+    }
+
+    .home-content p {
+        font-size: 29px; /* Increase font size */
+        margin-top: 5px;
+        animation-delay: 1.9s;
+    }
+
+    #btnbutton {
+        font-size: 29px; /* Increase font size */
+        width: auto;
+        padding: 10px 15px; /* Increase padding */
+        text-align: center;
+        cursor: pointer;
+        overflow: hidden;
+        margin-bottom: 10px; /* Increase margin */
+        animation-delay: 2.5s;
+    }
+
+    .btn::before {
+        content: none;
+    }
+
+    .home-logs {
+        order: 1;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-wrap: nowrap;
+        margin-left: 10px;
+        animation-delay: 3s;
+    }
+
+    #linksbuttons {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        width: 55px; /* Increase size */
+        height: 55px; /* Increase size */
+        color: #0ef;
+        background-color: #0c1022;
+        font-size: 29px; /* Increase font size */
+        text-decoration: none;
+        border: 2px solid #0ef;
+        border-radius: 50%;
+        margin: 0 5px;
+    }
+
+    .navbar {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        width: 80%;
+        height: 100vh;
+        position: fixed;
+        top: 0;
+        right: -100%;
+        z-index: 100;
+        background-color: #0a1a33;
+        transition: all 0.2s ease-in-out;
+        margin-top: -10px;
+    }
+
+    #check:checked ~ .navbar {
+        right: 0;
+    }
+
+    .navbar a {
+        padding-top: 35px; /* Increase padding */
+        font-size: 38px; /* Increase font size */
+        margin-bottom: 10px;
+    }
+
+    .open-menu, .close-menu {
+        display: block;
+        font-size: 55px;
+
+    }
+
+    .portfolio-section .portfolio-content .portfolio-box {
+        flex: 0 0 100%;
+        max-width: 45%;
+        margin: 1%;
+    }
+
+    .portfolio-content {
+        margin-top: 20px; /* Increase margin */
+    }
+    .portfolio-box h3{
+        font-size: 33px;
+    }
+    .portfolio-box a{
+        font-size: 23px;
+    }
+    .contact-section .contact-info p {
+        font-size: 35px; /* Increase font size of the <p> elements */
+    }
+    .form-group label{
+        font-size: 28px;
+    }
+    .form-group input{
+        font-size: 30px;
+    }
+    .contact-form button{
+        font-size: 32px;
+    }
+
+    .chat-icon {
+        position: fixed;
+        bottom: 50px; /* Adjust position */
+        right: 40px;
+        width: 90px; /* Increase size */
+        height: 90px; /* Increase size */
+    }
+
+    #icon-chatbot {
+        font-size: 68px; /* Increase font size */
+    }
+
+    .chat-container {
+        position: fixed;
+        bottom: 140px; /* Adjust position */
+        right: 60px;
+        width: 590px; /* Increase size */
+        max-width: 80%;
+        height: 600px; /* Increase size */
+    }
+
+    .chat-header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 15px; /* Increase padding */
+        background-color: #0c1022;
+        color: #fff;
+        border-radius: 10px 10px 0 0;
+    }
+    .chat-header h2{
+        font-size: 45px;
+    }
+
+
+    .chat-box {
+        flex: 1;
+        padding: 15px; /* Increase padding */
+        border-top: 1px solid #ccc;
+        overflow-y: auto;
+        color: #fff;
+        background-color: #0c1022;
+        font-size: 30px;
+    }
+
+    .chat-input {
+        width: calc(100% - 20px);
+        padding: 15px; /* Increase padding */
+        margin: 10px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        background-color: #1f1f1f;
+        color: #fff;
+        font-size: 25px;
+    }
+
+    .send-button {
+        padding: 15px 25px; /* Increase padding */
+        margin: 10px;
+        background-color: #0ef;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        font-size: 25px;
+    }
+
+    .close-chat {
+        cursor: pointer;
+        font-size: 44px;
+        line-height: 24px;
+        color: #fff;
+    }
+
+    .contact-info p {
+        font-size: 18px; /* Increase font size */
+        max-width: 100%;
+    }
+
+    .chat-icon:hover {
+        background-color: inherit;
+        transform: none;
+    }
+
+    .chat-icon:hover #icon-chatbot {
+        color: inherit;
+        transform: none;
+    }
+    .logoimage {
+        height: 130px; /* Adjust size as needed */
+        width: auto;
+    }
+}
+@media only screen and (min-width: 1025px) and (max-width: 1439px) {
+    /* General container adjustments */
+
+    .about-content h1{
+        font-size: 30px;
+    }
+
+    .about-content h3{
+        font-size: 20px;
+    }
+    .about-content p{
+        font-size: 17px;
+    }
+
+
+    .container {
+        width: 90%; /* Adjust container width */
+        overflow-x: hidden;
+    }
+    .home-content h1{
+        font-size: 35px;
+    }
+    .home-content h3{
+        font-size: 24px;
+    }
+    .home-content p{
+        font-size: 14px;
+    }
+    .home-image img{
+        width: 310px; /* Increase the size of the image */
+        height: 310px;
+    }
+
+    /* Adjustments for the Activities section */
+    .activities-section .activity-box {
+        flex: 0 0 48%; /* Two boxes per row */
+        max-width: 48%;
+        margin: 1%; /* Adjust margin for spacing */
+    }
+
+    .activities-section .activity-box h3 {
+        font-size: 1.3em; /* Adjust the font size */
+    }
+
+    .activities-section .activity-box p {
+        font-size: 1em; /* Adjust the font size */
+        line-height: 1.5em; /* Improve readability */
+    }
+
+    .activities-section .activity-box .btn {
+        font-size: 1em; /* Adjust the font size */
+        padding: 10px 20px; /* Adjust button padding */
+        margin-top: 10px; /* Add space above the button */
+    }
+
+    .activities-section .activity-box .btn#Download {
+        margin-left: -10px; /* Adjust the margin to move the button to the left */
+    }
+
+    /* Additional general adjustments if needed */
+    .section-title h2 {
+        font-size: 2em; /* Adjust the section title font size */
+    }
+
+    .navbar a {
+        font-size: 1em; /* Adjust navbar font size */
+    }
+    .container{
+        width: 100%;
+    }
+    .about-content{
+        text-align: center;
+        margin-left: 190px;
+        margin-top: 0px;
+    }
+
+    .education-experience {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: center;
+        width: 100%;
+        max-width: 100%;
+        padding-left: 0;
+        align-items: flex-start;
+    }
+
+    .education, .experience {
+        width: 48%;
+        max-width: 48%;
+        text-align: center;
+        margin: 1%;
+    }
+
+    .education .box, .experience .box {
+        width: 80%;
+        max-width: 100%;
+        margin: 10px auto;
+        position: relative;
+    }
+
+    .education .box::before, .experience .box::before {
+        content: none;
+    }
+    .box-content h4{
+        font-size: 20px;
+    }
+    .box-content p{
+        font-size: 15px; 
+    }
+    .section-title{
+        font-size: 23px;
+    }
+    .education title{
+        font-size: 5px;
+    }
+    
+}

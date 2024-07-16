@@ -15,13 +15,16 @@
     <!--===Header Start===-->
     <div class="header">
         <a href="{{ url_for('home') }}"><img class="logoimage" src="{{ url_for('static', filename='images/logo.png') }}" alt="Logo"></a>
+        <input type="checkbox" id="check">
         <nav class="navbar">
             <a href="{{ url_for('home') }}">Home</a>
             <a href="{{ url_for('about') }}">About</a>
             <a href="{{ url_for('activities') }}">Activities</a>
             <a class="active" href="{{ url_for('portfolio') }}">Portfolio</a>
             <a href="{{ url_for('contact') }}">Contact</a>
+            <label for="check" class="close-menu"><i class="fas fa-times"></i></label>
         </nav>
+        <label for="check" class="open-menu"><i class="fas fa-bars"></i></label>
     </div>
     <!--===Header End===-->
 

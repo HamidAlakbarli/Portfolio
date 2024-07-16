@@ -17,13 +17,16 @@
         <!--===Header Start===-->
         <div class="header">
             <a href="{{ url_for('home') }}"><img class="logoimage" src="{{ url_for('static', filename='images/logo.png') }}" alt="Logo"></a>
+            <input type="checkbox" id="check">
             <nav class="navbar">
                 <a class="active" href="{{ url_for('home') }}">Home</a>
                 <a href="{{ url_for('about') }}">About</a>
                 <a href="{{ url_for('activities') }}">Activities</a>
                 <a href="{{ url_for('portfolio') }}">Portfolio</a>
                 <a href="{{ url_for('contact') }}">Contact</a>
-            </nav>
+                <label for="check" class="close-menu"><i class="fas fa-times"></i></label>
+            </nav>  
+            <label for="check" class="open-menu"><i class="fas fa-bars"></i></label>
         </div>
         <!--===Header End===-->
         <!--===Main Content Start===-->
@@ -31,20 +34,20 @@
         <section class="home">
             <div class="home-content">
                 <h1 class="fade-in">Hi, I'm Hamid Alakbarli</h1>
-                <h3 class="fade-in" style="animation-delay: 0.5s;">Student at Boston University</h3>
-                <p class="fade-in" style="animation-delay: 1s;">
+                <h3 class="fade-in">Student at Boston University</h3>
+                <p class="fade-in" ">
                     Diligent and passionate Computer Science student at Boston University, currently interning at the International Bank of Azerbaijan, in Data Science Chapter. Possessing a solid foundation in programming languages including Python, Java, HTML, C, and Assembly, I have hands-on experience in software development and AI projects. Driven by a desire to contribute to the growth of innovative organizations, I am keen to gain invaluable industry experience and make a positive impact. I aspire to leverage technology to address and solve environmental challenges, aiming to create a better and more sustainable world.
                 </p>
                 <div class="ending" style="display: flex; align-items: center;">
-                    <a href="{{ url_for('about') }}" class="btn fade-in" style="animation-delay: 1.5s;">More About Me</a>
-                    <div class="home-logs fade-in" style="animation-delay: 2s;">
-                        <a href="https://www.linkedin.com/in/hamid-alakbarli-62456a2b7"><i class='bx bxl-linkedin'></i></a>
-                        <a href="https://www.instagram.com/hamid.alakbarli?igsh=YzdzOWcxYnkydXFl&utm_source=qr"><i class='bx bxl-instagram'></i></a>
-                        <a href="https://github.com/Greyzlion1"><i class='bx bxl-github'></i></a>
+                    <a href="{{ url_for('about') }}" id="btnbutton"  class="btn fade-in">More About Me</a>
+                    <div class="home-logs fade-in" >
+                        <a id="linksbuttons" href="https://www.linkedin.com/in/hamid-alakbarli-62456a2b7"><i class='bx bxl-linkedin'></i></a>
+                        <a id="linksbuttons" href="https://www.instagram.com/hamid.alakbarli?igsh=YzdzOWcxYnkydXFl&utm_source=qr"><i class='bx bxl-instagram'></i></a>
+                        <a id="linksbuttons" href="https://github.com/Greyzlion1"><i class='bx bxl-github'></i></a>
                     </div>
                 </div>
             </div>
-            <div class="home-image fade-in" style="animation-delay: 2.5s;">
+            <div class="home-image fade-in">
                 <img src="{{ url_for('static', filename='images/pixelcut-export.png') }}" alt="My Picture">
             </div>
         </section>

@@ -8,7 +8,7 @@ document.addEventListener("DOMContentLoaded", function() {
         chatContainer.style.display = chatContainer.style.display === 'none' || chatContainer.style.display === '' ? 'flex' : 'none';
         if (chatContainer.style.display === 'flex' && !isChatOpened) {
             displayMessage('Hamid', "Hello, my name is Hamid. How can I help you?");
-            isChatOpened = true; // Set the flag to true after the first opening
+            isChatOpened = true;
         }
     };
 

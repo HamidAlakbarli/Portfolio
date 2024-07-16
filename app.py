@@ -1,34 +1,41 @@
 import os
 from flask import Flask, request, jsonify, render_template, flash, redirect, url_for
 from flask_mail import Mail, Message
+from flask_sqlalchemy import SQLAlchemy
 from langchain_community.document_loaders import TextLoader
 from langchain_openai import OpenAIEmbeddings
 from langchain.vectorstores import Chroma
 from langchain.text_splitter import CharacterTextSplitter
 from langchain.llms import OpenAI
 
-app = Flask(__name__)
-app.secret_key = 'adadadadadawadawdsda'
+app = Flask(__name__, instance_relative_config=True)
+app.secret_key = os.getenv('SECRET_KEY', 'default_secret_key')
 
 # Configuration for Flask-Mail
 app.config['MAIL_SERVER'] = 'smtp.gmail.com'
 app.config['MAIL_PORT'] = 465
 app.config['MAIL_USE_SSL'] = True
 app.config['MAIL_USE_TLS'] = False
-app.config['MAIL_USERNAME'] = 'elekberlihemid@gmail.com'
-app.config['MAIL_PASSWORD'] = 'pgcl ofxa bmwg oawx'
+app.config['MAIL_USERNAME'] = os.getenv("MAIL_USERNAME")
+app.config['MAIL_PASSWORD'] = os.getenv("MAIL_PASSWORD")
 
 mail = Mail(app)
 
+# Configuration for SQLAlchemy
+app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///chatbot.db'
+app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
+
+db = SQLAlchemy(app)
+
 # Set OpenAI API key
-os.environ["OPENAI_API_KEY"] = "sk-proj-Tm513jRer0H7XxFmev1ST3BlbkFJ4EeVKlC5XdjIaikuLreZ"
+os.environ["OPENAI_API_KEY"] = os.getenv("OPENAI_API_KEY")
 
 # Load data from a text file
 loader = TextLoader("mydata.txt")
 documents = loader.load()
 
 # Split the documents into chunks
-text_splitter = CharacterTextSplitter(chunk_size=100, chunk_overlap=0)
+text_splitter = CharacterTextSplitter(chunk_size=10, chunk_overlap=0)
 texts = text_splitter.split_documents(documents)
 
 # Create an embedding model
@@ -42,9 +49,9 @@ llm = OpenAI()
 
 def get_response(question):
     # Simple greetings handling
-    greetings = ['hello', 'hi', 'hey']
+    greetings = ['hello', 'hi', 'hey', 'how are you']
     if question.lower() in greetings:
-        return "Hello! How can I assist you today?"
+        return "Hello! How can I help you today?"
 
     # Format the question into a structured prompt
     prompt = f"Question: {question}"
@@ -60,8 +67,19 @@ def get_response(question):
         response = llm(f"Answer the question based on the following context: {context}\n\nQuestion: {question}")
     else:
         response = llm(question)
-    
+
     return response
+
+# Define a model for storing chat history
+class ChatHistory(db.Model):
+    id = db.Column(db.Integer, primary_key=True)
+    question = db.Column(db.String(500), nullable=False)
+    answer = db.Column(db.String(5000), nullable=False)
+    timestamp = db.Column(db.DateTime, default=db.func.current_timestamp())
+
+# Create the database and tables
+with app.app_context():
+    db.create_all()
 
 @app.route('/')
 def home():
@@ -102,7 +120,13 @@ def chat():
     data = request.json
     question = data.get('question', '')
     response = get_response(question)
+
+    # Store question and response in the database
+    chat_history = ChatHistory(question=question, answer=response)
+    db.session.add(chat_history)
+    db.session.commit()
+
     return jsonify({'response': response})
 
 if __name__ == '__main__':
-    app.run(debug=True)
+    app.run(host='0.0.0.0', port=5000, debug=True)
