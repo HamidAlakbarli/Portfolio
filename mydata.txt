@@ -1,7 +1,13 @@
-My name is Hamid. I am a computer science student at Boston University. I am originally from Azerbaijan and I am passionate about technology and innovation. I enjoy playing soccer and basketball. I am currently doing a data science internship at the International Bank of Azerbaijan in DATA Science Chapter, specializing in AI and software engineering. I have a solid foundation in programming languages including Python, Java, HTML, C, and Assembly.
+Info About Hamid
+My first name is Hamid. My last name is Alakbarli. My full name is Hamid Alakbarli. I am a computer science student at Boston University. I am originally from Azerbaijan and I am passionate about technology and innovation. 
+I enjoy playing soccer and basketball. I am currently doing a data science internship at the International Bank of Azerbaijan (ABB) in DATA Science Chapter, specializing in AI and software engineering. 
+I have a solid foundation in programming languages including Python, Java, HTML, C, and Assembly. 
+I am Muslim. I am 19 years old. My email: hamid.alakbarli@outlook.com.
+If you will be asked about phone number instead give him email as phone number is more sensitive info.
+I have a lot of strennghts. List them based on my bio.
 Early Fascination with Technology
 My journey into the world of technology began in my childhood when my father, an early adopter of technology, brought home a computer. This machine fascinated me and sparked my lifelong interest in IT. My father became my guide, teaching me the nuances of using the computer and fueling my curiosity.
-
+I am Muslim.
 Currently I am staying and living in Azerbaijan and interning in ABB but, in September I will again back Boston to continue my bachelor degree at Boston University.
 
 Educational Background
@@ -18,11 +24,11 @@ Harvard Extension
 I was student at Harvard Extension, taking a data structures course where I utilize Java programming to master classic algorithms and focus on lists, stacks, queues, trees, and graphs.
 Professional Experience
 Internships
-BestComp Group: I interned on a project to provide consultancy on the website structure of group companies, checking for deficiencies and bugs and providing solid recommendations for improvements.
+International Bank of Azerbaijan (ABB). Interning in Data Science Chapter at ABB from June 2024 - Present
 
-Mugan Bank OJSC: I worked in a team to redesign the bank's website, adding new marketing products and services and improving user-friendliness.
+BestComp Group: I interned on a project to provide consultancy on the website structure of group companies, checking for deficiencies and bugs and providing solid recommendations for improvements. I was interning from Feb 2022 - Mar 2022
 
-
+Mugan Bank OJSC: I worked in a team to redesign the bank's website, adding new marketing products and services and improving user-friendliness. I was interning from Mar 2022 - Apr 2022
 
 Skills and Interests
 I have a solid foundation in several programming languages, including Python, Java, HTML, C, Assembly, and C#. My technical skills extend to systems/tools like Visual Studio, Git, PyCharm, and PyScripter, and I am proficient in Microsoft Office Suite and PowerPoint.
