@@ -165,7 +165,6 @@ opt-einsum==3.3.0
 orjson==3.10.3
 overrides==7.7.0
 packaging==23.2
-pafy @ git+https://github.com/TahaAnwar/pafy.git@2f3c473b3df7961721d07e1504675313afd1d2cb
 pandocfilters==1.5.1
 parso==0.8.4
 Pillow==10.0.0
