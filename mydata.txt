@@ -2,14 +2,14 @@ Info About Hamid
 My first name is Hamid. My last name is Alakbarli. My full name is Hamid Alakbarli. I am a computer science student at Boston University. I am originally from Azerbaijan and I am passionate about technology and innovation. 
 I enjoy playing soccer and basketball. I am currently doing a data science internship at the International Bank of Azerbaijan (ABB) in DATA Science Chapter, specializing in AI and software engineering. 
 I have a solid foundation in programming languages including Python, Java, HTML, C, and Assembly. 
-I am Muslim. I am 19 years old. My email: hamid.alakbarli@outlook.com.
+I am Muslim. I am 19 years old. My email: alakbarh@bu.edu.
 If you will be asked about phone number instead give him email as phone number is more sensitive info.
 I have a lot of strennghts. List them based on my bio.
 Early Fascination with Technology
 My journey into the world of technology began in my childhood when my father, an early adopter of technology, brought home a computer. This machine fascinated me and sparked my lifelong interest in IT. My father became my guide, teaching me the nuances of using the computer and fueling my curiosity.
 I am Muslim.
 Currently I am staying and living in Azerbaijan and interning in ABB but, in September I will again back Boston to continue my bachelor degree at Boston University.
-
+My English Languge level is Full Professiona Proficiency.
 Educational Background
 American University
 I began my higher education journey at the American University in Washington, D.C., where I pursued a Bachelor of Science in Computer Science for two years and later on trasnfere to Boston Univerist in 2024. I studied in American university from 2022-2024. My coursework included fundamentals of computer science, mathematics, and physics. I became an active member of the Robotics Club, where I honed my skills in robotics design, engineering, and teamwork.
@@ -35,4 +35,4 @@ I have a solid foundation in several programming languages, including Python, Ja
 
 Beyond academics and professional work, I enjoy playing soccer and basketball, reading, and staying fit. I am passionate about making new friends and connections, which enriches my personal and professional life.
 
-If you have a different question which I did not answered send me email in the contact section.
+If you have a different question which I did not answered send me email to alakbarh@bu.edu in the contact section :

@@ -32,8 +32,8 @@ body {
 }
 
 .logoimage {
-    width: 100px; /* Adjust the width as needed */
-    height: auto; /* Maintain aspect ratio */
+    width: 85px;
+    height: auto; 
 }
 
 .navbar a {
@@ -61,9 +61,9 @@ body {
     height: 100vh;
     display: flex;
     align-items: center;
-    justify-content: space-between; /* Align content to the sides */
+    justify-content: space-between; 
     padding: 0 10%;
-    overflow: hidden; /* Ensure no overflow */
+    overflow: hidden; 
 }
 
 .home-content {
@@ -194,7 +194,7 @@ body {
 .home-image {
     flex: 1;
     display: flex;
-    justify-content: flex-end; /* Align the image to the right */
+    justify-content: flex-end; 
     align-items: center;
     padding-top: 108px;
     animation-delay:2.8s;
@@ -202,8 +202,8 @@ body {
 }
 
 .home-image img {
-    width: 410px; /* Increase the size of the image */
-    height: 410px; /* Increase the size of the image */
+    width: 410px; 
+    height: 410px; 
     border-radius: 50%;
     border: 5px solid #0ef;
     object-fit: cover;
@@ -229,7 +229,7 @@ body {
 
 /* About Me Section CSS */
 .about-section {
-    padding-top: 150px; /* Adjust padding to position section correctly */
+    padding-top: 150px;
     padding-bottom: 35px;
 }
 
@@ -253,7 +253,7 @@ body {
 .section-title h2::before {
     content: "";
     position: absolute;
-    width: 100px; /* Increase the length of the line */
+    width: 100px; 
     height: 4px;
     background: #0ef;
     left: 50%;
@@ -264,7 +264,7 @@ body {
 .section-title h2::after {
     content: "";
     position: absolute;
-    width: 50px; /* Increase the length of the line */
+    width: 50px; 
     height: 4px;
     background: #0ef;
     left: 50%;
@@ -278,8 +278,8 @@ body {
 
 .about-content {
     max-width: 700px;
-    padding-left: 10%; /* Adjust to match header padding */
-    margin-top: 80px; /* Add margin to push content below navbar */
+    padding-left: 10%; 
+    margin-top: 80px; 
     float: left;
 }
 
@@ -308,7 +308,7 @@ body {
 .about-content h3:hover,
 .about-content p:hover,
 .info-list li:hover {
-    color: #0ef; /* Hover effect color */
+    color: #0ef; 
 }
 
 .info-list {
@@ -319,7 +319,7 @@ body {
 .info-list li {
     font-size: 18px;
     margin-bottom: 10px;
-    transition: color 0.3s; /* Add transition for hover effect */
+    transition: color 0.3s; 
 }
 
 .info-list li strong {
@@ -334,15 +334,15 @@ body {
 }
 
 .education {
-    width: 43%; /* Adjusted width to make space for experience */
+    width: 43%; 
 }
 
 .experience {
-    width: 44%; /* Adjusted width to fit both columns side by side */
+    width: 44%; 
 }
 
 .title {
-    font-size: 40px; /* Adjusted font size */
+    font-size: 40px; 
     font-weight: 700;
     margin-bottom: 20px;
     transition: color 0.3s;
@@ -355,7 +355,7 @@ body {
     padding: 10px;
     margin-bottom: 20px;
     position: relative;
-    width: 80%; /* Ensure boxes fit within their columns */
+    width: 80%; 
 }
 
 .box-content {
@@ -391,13 +391,13 @@ body {
 }
 
 .box:hover {
-    border-color: #0ef; /* Restore original hover effect color */
+    border-color: #0ef; 
 }
 
 .box:hover .box-content h4,
 .box:hover .box-content p,
 .box:hover .box-content strong {
-    color: #0ef; /* Restore original hover effect color */
+    color: #0ef; 
 }
 .section-title h2,
 .about-content h1,
@@ -436,7 +436,7 @@ body {
 
 .header {
     width: 100%;
-    background: rgba(12, 16, 34, 0.9); /* Semi-transparent background */
+    background: rgba(12, 16, 34, 0.9); 
     position: fixed;
     left: 0px;
     top: 0px;
@@ -448,8 +448,8 @@ body {
 }
 
 .logoimage {
-    width: 100px; /* Adjust the width as needed */
-    height: auto; /* Maintain aspect ratio */
+    width: 85px; 
+    height: auto; 
 }
 
 .navbar a {
@@ -473,7 +473,7 @@ body {
 
 /* Contact Section CSS */
 .contact-section {
-    padding-top: 150px; /* Adjust padding to position section correctly */
+    padding-top: 150px; 
 }
 
 .section-title {
@@ -496,7 +496,7 @@ body {
 .section-title h2::before {
     content: "";
     position: absolute;
-    width: 100px; /* Increase the length of the line */
+    width: 100px; 
     height: 4px;
     background: #0ef;
     left: 50%;
@@ -507,7 +507,7 @@ body {
 .section-title h2::after {
     content: "";
     position: absolute;
-    width: 50px; /* Increase the length of the line */
+    width: 50px; 
     height: 4px;
     background: #0ef;
     left: 50%;
@@ -528,7 +528,7 @@ body {
 }
 .contact-info p {
     display: inline-block;
-    margin: 0 15px; /* Add margin to separate each piece of info */
+    margin: 0 15px;
     font-size: 23px;
 }
 
@@ -608,7 +608,7 @@ body {
 
 /* Activities Section CSS */
 .activities-section {
-    padding-top: 150px; /* Adjust padding to position section correctly */
+    padding-top: 150px; 
 }
 
 .section-title {
@@ -631,7 +631,7 @@ body {
 .section-title h2::before {
     content: "";
     position: absolute;
-    width: 100px; /* Increase the length of the line */
+    width: 100px; 
     height: 4px;
     background: #0ef;
     left: 50%;
@@ -642,7 +642,7 @@ body {
 .section-title h2::after {
     content: "";
     position: absolute;
-    width: 50px; /* Increase the length of the line */
+    width: 50px; 
     height: 4px;
     background: #0ef;
     left: 50%;
@@ -666,7 +666,7 @@ body {
     border-radius: 10px;
     padding: 15px;
     margin: 10px;
-    width: 26.3%; /* Adjust width to fit three boxes per row */
+    width: 26.3%; 
     box-sizing: border-box;
     position: relative;
     transition: all 0.3s;
@@ -704,7 +704,7 @@ body {
 
 /* Portfolio Section CSS */
 .portfolio-section {
-    padding-top: 150px; /* Adjust padding to position section correctly */
+    padding-top: 150px; 
 }
 
 .section-title {
@@ -727,7 +727,7 @@ body {
 .section-title h2::before {
     content: "";
     position: absolute;
-    width: 100px; /* Increase the length of the line */
+    width: 100px; 
     height: 4px;
     background: #0ef;
     left: 50%;
@@ -738,7 +738,7 @@ body {
 .section-title h2::after {
     content: "";
     position: absolute;
-    width: 50px; /* Increase the length of the line */
+    width: 50px; 
     height: 4px;
     background: #0ef;
     left: 50%;
@@ -763,7 +763,7 @@ body {
     border-radius: 10px;
     padding: 15px;
     margin: 10px;
-    width: 26%; /* Adjust width to fit three boxes per row */
+    width: 26%; 
     box-sizing: border-box;
     position: relative;
     transition: all 0.3s;
@@ -774,7 +774,7 @@ body {
 
 .portfolio-img {
     width: 100%;
-    height: 150px; /* Adjusted height for the project image */
+    height: 150px; 
     background-size: cover;
     background-position: center;
     border-radius: 10px;
@@ -811,8 +811,8 @@ margin-top: 20px;
     align-items: center;
     cursor: pointer;
     z-index: 1000;
-    transition: background-color 0.3s ease, transform 0.3s ease; /* Added transition for smooth hover effect */
-    border: 2px solid #0ef; /* Corrected the border property */
+    transition: background-color 0.3s ease, transform 0.3s ease; 
+    border: 2px solid #0ef; 
 }
 
 #icon-chatbot {
@@ -824,12 +824,12 @@ margin-top: 20px;
 /* Hover Effect */
 .chat-icon:hover {
     background-color: #0ef; /* Change background color on hover */
-    transform: scale(1.1); /* Increase size slightly on hover */
+    transform: scale(1.1); 
 }
 
 .chat-icon:hover #icon-chatbot {
-    color: #0c1022; /* Change icon color on hover */
-    transform: scale(1.2); /* Increase icon size slightly on hover */
+    color: #0c1022; 
+    transform: scale(1.2); 
 }
 
 .chat-container {
@@ -938,31 +938,30 @@ margin-top: 20px;
         overflow-x: hidden;
         display: flex;
         flex-direction: column;
-        align-items: center; /* Center align the content */
+        align-items: center; 
     }
 
     .about-content {
-        padding: 0; /* Remove any padding */
-        margin: 0; /* Remove any margin */
+        padding: 0; 
+        margin: 0; 
     }
 
     .about-content h1 {
         font-size: 34px;
-        text-align: center; /* Center the text */
-        margin: 0; /* Remove any margin */
+        margin: 0; 
         max-width: 90%;
     }
 
     .about-content h3 {
         font-size: 20px;
-        text-align: center; /* Center the text */
-        margin: 0; /* Remove any margin */
+        text-align: center; 
+        margin: 0; 
         max-width: 90%;
     }
 
     .about-content p {
         font-size: 15px;
-        text-align: center; /* Center the text */
+        text-align: center;
         margin: 0; /* Remove any margin */
         padding-top: 20px;
         padding-bottom: 20px;
@@ -970,16 +969,16 @@ margin-top: 20px;
     }
 
     .info-list {
-        list-style-type: none; /* Remove default list styling */
-        padding: 0; /* Remove default padding */
-        margin: 0; /* Remove any margin */
-        text-align: center; /* Center align the list */
+        list-style-type: none; 
+        padding: 0; 
+        margin: 0; 
+        text-align: center; 
         max-width: 85%;
     }
 
     .info-list li {
         font-size: 14px;
-        margin-bottom: 5px; /* Add some spacing between list items */
+        margin-bottom: 5px; 
     }
     
     .education-experience {
@@ -994,13 +993,13 @@ margin-top: 20px;
     .education, .experience {
         width: 100%;
         max-width: 100%;
-        text-align: center; /* Center the titles */
+        text-align: center; 
     }
 
     .education .box, .experience .box {
-        width: 90%; /* Adjust to match the other sections */
-        max-width: 90%; /* Ensure it doesn't exceed the container */
-        margin: 10px auto; /* Center the boxes and add margin between them */
+        width: 90%; 
+        max-width: 90%; 
+        margin: 10px auto; 
         position: relative;
     }
 
@@ -1048,19 +1047,19 @@ margin-top: 20px;
 
     .home-content h1 {
         font-size: 36px;
-        padding-top: 10px; /* Reduce padding */
+        padding-top: 10px; 
         animation-delay:0.9s;
     }
 
     .home-content h3 {
         font-size: 19px;
-        margin-top: 5px; /* Reduce margin */
+        margin-top: 5px; 
         animation-delay:1.5s;
     }
 
     .home-content p {
         font-size: 15px;
-        margin-top: 5px; /* Reduce margin */
+        margin-top: 5px; 
         animation-delay:1.9s;
     }
 
@@ -1071,11 +1070,11 @@ margin-top: 20px;
         text-align: center;
         cursor: pointer;
         overflow: hidden;
-        margin-bottom: 5px; /* Reduce margin */
+        margin-bottom: 5px; 
         animation-delay:2.5s;
     }
     .btn::before {
-        content: none; /* Remove the rectangular hover effect */
+        content: none; 
     }
 
 
@@ -1085,7 +1084,7 @@ margin-top: 20px;
         justify-content: center;
         align-items: center;
         flex-wrap: nowrap;
-        margin-left: 10px; /* Adjust to align with button */
+        margin-left: 10px; 
         animation-delay:3s;
     }
 
@@ -1101,7 +1100,7 @@ margin-top: 20px;
         text-decoration: none;
         border: 2px solid #0ef;
         border-radius: 50%;
-        margin: 0 5px; /* Adjust margin */
+        margin: 0 5px; 
     }
 
     .navbar {
@@ -1211,13 +1210,13 @@ margin-top: 20px;
     }
 
     .chat-icon:hover {
-        background-color: inherit; /* Keep the same background color */
-        transform: none; /* Remove the scaling effect */
+        background-color: inherit; 
+        transform: none; 
     }
 
     .chat-icon:hover #icon-chatbot {
-        color: inherit; /* Keep the same icon color */
-        transform: none; /* Remove the scaling effect */
+        color: inherit; 
+        transform: none; 
     }
     
 }
@@ -1242,7 +1241,7 @@ margin-top: 20px;
     }
 
     .activities-section, .about-section, .contact-section {
-        margin-bottom: 80px; /* Increase bottom margin */
+        margin-bottom: 80px; 
     }
 
     .about-content, .education-experience {
@@ -1268,21 +1267,21 @@ margin-top: 20px;
     }
 
     .about-content h1 {
-        font-size: 60px; /* Increase font size */
+        font-size: 60px; 
         text-align: center;
         margin: 0;
         max-width: 90%;
     }
 
     .about-content h3 {
-        font-size: 38px; /* Increase font size */
+        font-size: 38px; 
         text-align: center;
         margin: 0;
         max-width: 90%;
     }
 
     .about-content p {
-        font-size: 28px; /* Increase font size */
+        font-size: 28px; 
         text-align: center;
         margin: 0;
         padding-top: 20px;
@@ -1299,7 +1298,7 @@ margin-top: 20px;
     }
 
     .info-list li {
-        font-size: 27px; /* Increase font size */
+        font-size: 27px; 
         margin-bottom: 5px;
     }
 
@@ -1343,7 +1342,7 @@ margin-top: 20px;
         align-items: center;
         max-width: 100%;
         height: 100%;
-        margin-bottom: 20px; /* Increase bottom margin */
+        margin-bottom: 20px; 
     }
 
     .home-image {
@@ -1358,8 +1357,8 @@ margin-top: 20px;
 
     .home-image img {
         order: -1;
-        height: 320px; /* Increase image size */
-        width: 320px; /* Increase image size */
+        height: 320px; 
+        width: 320px; 
         border-radius: 50%;
         border: 5px solid #0ef;
         object-fit: cover;
@@ -1374,31 +1373,31 @@ margin-top: 20px;
     }
 
     .home-content h1 {
-        font-size: 53px; /* Increase font size */
+        font-size: 53px; 
         padding-top: 10px;
         animation-delay: 0.9s;
     }
 
     .home-content h3 {
-        font-size: 39px; /* Increase font size */
+        font-size: 39px; 
         margin-top: 5px;
         animation-delay: 1.5s;
     }
 
     .home-content p {
-        font-size: 29px; /* Increase font size */
+        font-size: 29px; 
         margin-top: 5px;
         animation-delay: 1.9s;
     }
 
     #btnbutton {
-        font-size: 29px; /* Increase font size */
+        font-size: 29px; 
         width: auto;
-        padding: 10px 15px; /* Increase padding */
+        padding: 10px 15px; 
         text-align: center;
         cursor: pointer;
         overflow: hidden;
-        margin-bottom: 10px; /* Increase margin */
+        margin-bottom: 10px; 
         animation-delay: 2.5s;
     }
 
@@ -1420,11 +1419,11 @@ margin-top: 20px;
         display: inline-flex;
         align-items: center;
         justify-content: center;
-        width: 55px; /* Increase size */
-        height: 55px; /* Increase size */
+        width: 55px; 
+        height: 55px; 
         color: #0ef;
         background-color: #0c1022;
-        font-size: 29px; /* Increase font size */
+        font-size: 29px; 
         text-decoration: none;
         border: 2px solid #0ef;
         border-radius: 50%;
@@ -1452,8 +1451,8 @@ margin-top: 20px;
     }
 
     .navbar a {
-        padding-top: 35px; /* Increase padding */
-        font-size: 38px; /* Increase font size */
+        padding-top: 35px;
+        font-size: 38px; 
         margin-bottom: 10px;
     }
 
@@ -1470,7 +1469,7 @@ margin-top: 20px;
     }
 
     .portfolio-content {
-        margin-top: 20px; /* Increase margin */
+        margin-top: 20px; 
     }
     .portfolio-box h3{
         font-size: 33px;
@@ -1479,7 +1478,7 @@ margin-top: 20px;
         font-size: 23px;
     }
     .contact-section .contact-info p {
-        font-size: 35px; /* Increase font size of the <p> elements */
+        font-size: 35px; 
     }
     .form-group label{
         font-size: 28px;
@@ -1493,30 +1492,30 @@ margin-top: 20px;
 
     .chat-icon {
         position: fixed;
-        bottom: 50px; /* Adjust position */
+        bottom: 50px; 
         right: 40px;
-        width: 90px; /* Increase size */
-        height: 90px; /* Increase size */
+        width: 90px; 
+        height: 90px; 
     }
 
     #icon-chatbot {
-        font-size: 68px; /* Increase font size */
+        font-size: 68px; 
     }
 
     .chat-container {
         position: fixed;
-        bottom: 140px; /* Adjust position */
+        bottom: 140px; 
         right: 60px;
-        width: 590px; /* Increase size */
+        width: 590px; 
         max-width: 80%;
-        height: 600px; /* Increase size */
+        height: 600px; 
     }
 
     .chat-header {
         display: flex;
         justify-content: space-between;
         align-items: center;
-        padding: 15px; /* Increase padding */
+        padding: 15px; 
         background-color: #0c1022;
         color: #fff;
         border-radius: 10px 10px 0 0;
@@ -1528,7 +1527,7 @@ margin-top: 20px;
 
     .chat-box {
         flex: 1;
-        padding: 15px; /* Increase padding */
+        padding: 15px; 
         border-top: 1px solid #ccc;
         overflow-y: auto;
         color: #fff;
@@ -1538,7 +1537,7 @@ margin-top: 20px;
 
     .chat-input {
         width: calc(100% - 20px);
-        padding: 15px; /* Increase padding */
+        padding: 15px; 
         margin: 10px;
         border: 1px solid #ccc;
         border-radius: 5px;
@@ -1548,7 +1547,7 @@ margin-top: 20px;
     }
 
     .send-button {
-        padding: 15px 25px; /* Increase padding */
+        padding: 15px 25px;
         margin: 10px;
         background-color: #0ef;
         border: none;
@@ -1565,7 +1564,7 @@ margin-top: 20px;
     }
 
     .contact-info p {
-        font-size: 18px; /* Increase font size */
+        font-size: 18px; 
         max-width: 100%;
     }
 
@@ -1579,7 +1578,7 @@ margin-top: 20px;
         transform: none;
     }
     .logoimage {
-        height: 130px; /* Adjust size as needed */
+        height: 130px;
         width: auto;
     }
 }
@@ -1599,7 +1598,7 @@ margin-top: 20px;
 
 
     .container {
-        width: 90%; /* Adjust container width */
+        width: 90%; 
         overflow-x: hidden;
     }
     .home-content h1{
@@ -1612,43 +1611,43 @@ margin-top: 20px;
         font-size: 14px;
     }
     .home-image img{
-        width: 310px; /* Increase the size of the image */
+        width: 310px;
         height: 310px;
     }
 
     /* Adjustments for the Activities section */
     .activities-section .activity-box {
-        flex: 0 0 48%; /* Two boxes per row */
+        flex: 0 0 48%; 
         max-width: 48%;
-        margin: 1%; /* Adjust margin for spacing */
+        margin: 1%; 
     }
 
     .activities-section .activity-box h3 {
-        font-size: 1.3em; /* Adjust the font size */
+        font-size: 1.3em; 
     }
 
     .activities-section .activity-box p {
-        font-size: 1em; /* Adjust the font size */
-        line-height: 1.5em; /* Improve readability */
+        font-size: 1em; 
+        line-height: 1.5em; 
     }
 
     .activities-section .activity-box .btn {
-        font-size: 1em; /* Adjust the font size */
-        padding: 10px 20px; /* Adjust button padding */
-        margin-top: 10px; /* Add space above the button */
+        font-size: 1em; 
+        padding: 10px 20px; 
+        margin-top: 10px; 
     }
 
     .activities-section .activity-box .btn#Download {
-        margin-left: -10px; /* Adjust the margin to move the button to the left */
+        margin-left: -10px;
     }
 
     /* Additional general adjustments if needed */
     .section-title h2 {
-        font-size: 2em; /* Adjust the section title font size */
+        font-size: 2em; 
     }
 
     .navbar a {
-        font-size: 1em; /* Adjust navbar font size */
+        font-size: 1em; 
     }
     .container{
         width: 100%;
