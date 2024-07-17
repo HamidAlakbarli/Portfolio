@@ -4,7 +4,7 @@ This project is my personal portfolio website. The website demonstrate my academ
 Link: https://www.hamidalakbarli.com
 
 Features
-Home Page: Introduction and brief description about Hamid Alakbarli.
+Home Page: Introduction and brief description about me.
 About Page: Detailed information about my background, education, and professional experience.
 Activities Page: Overview of activities and achievements.
 Portfolio Page: Display of projects and works.
