@@ -6,7 +6,12 @@ from langchain_community.document_loaders import TextLoader
 from langchain_openai import OpenAIEmbeddings
 from langchain.vectorstores import Chroma
 from langchain.text_splitter import CharacterTextSplitter
+from dotenv import load_dotenv
 from langchain.llms import OpenAI
+
+
+# Load environment variables from .env file
+load_dotenv()
 
 app = Flask(__name__, instance_relative_config=True)
 app.secret_key = os.getenv('SECRET_KEY', 'default_secret_key')
