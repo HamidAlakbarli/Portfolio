@@ -1,3 +1,4 @@
+
 Info About Hamid
 My first name is Hamid. My last name is Alakbarli. My full name is Hamid Alakbarli. I am a computer science student at Boston University. I am originally from Azerbaijan and I am passionate about technology and innovation. 
 I enjoy playing soccer and basketball. I am currently doing a data science internship at the International Bank of Azerbaijan (ABB) in DATA Science Chapter, specializing in AI and software engineering. 

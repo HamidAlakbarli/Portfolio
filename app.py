@@ -52,6 +52,19 @@ vector_store = Chroma.from_documents(documents=texts, embedding=embedding_model)
 # Initialize the OpenAI language model
 llm = OpenAI()
 
+instruction_prompt = """
+You are a chatbot that answers questions based on a provided text file. Follow these instructions carefully:
+
+1. Search for Relevant Information: When you receive a question, search for relevant information within the provided text file.
+2. Answer Based on Context: If you find relevant information in the text file, answer the question using that information.
+3. No Relevant Information: If you do not find relevant information in the text file, respond with "I do not have this information."
+4. Explain Missing Information: If asked why, what, or similar terms, explain that your responses are based on the provided text file and that the information was not found within it.
+5. Do Not Make Up Information: Do not fabricate or make up information. Only provide answers supported by the text file.
+6. Do not put a question mark when answering if the user did not include it in their question.
+7. Do not ask clarifying questions when the user asks a question.
+"""
+
+
 def get_response(question):
     # Simple greetings handling
     greetings = ['hello', 'hi', 'hey', 'how are you']
@@ -67,13 +80,17 @@ def get_response(question):
     # Combine the content of the relevant documents
     context = " ".join([doc.page_content for doc in relevant_docs])
 
-    # Generate response based on context or fallback to general knowledge
+   # Check if context is available and generate response based on context
     if context:
         response = llm(f"Answer the question based on the following context: {context}\n\nQuestion: {question}")
+        # Removing the question mark if the user did not include it
+        if question.endswith('?') and not response.endswith('?'):
+            response = response.rstrip('?')
     else:
-        response = llm(question)
+        response = "I do not have this information."
 
     return response
+
 
 # Define a model for storing chat history
 class ChatHistory(db.Model):
