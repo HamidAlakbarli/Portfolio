@@ -32,24 +32,24 @@ app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 
 db = SQLAlchemy(app)
 
-# Set OpenAI API key
+# Seting OpenAI API key
 os.environ["OPENAI_API_KEY"] = os.getenv("OPENAI_API_KEY")
 
-# Load data from a text file
+# Loading data from a text file
 loader = TextLoader("mydata.txt")
 documents = loader.load()
 
-# Split the documents into chunks
+# Spliting the documents into chunks
 text_splitter = CharacterTextSplitter(chunk_size=10, chunk_overlap=0)
 texts = text_splitter.split_documents(documents)
 
-# Create an embedding model
+# Creating an embedding model
 embedding_model = OpenAIEmbeddings()
 
-# Create a Chroma vector store
+# Creating a Chroma vector store
 vector_store = Chroma.from_documents(documents=texts, embedding=embedding_model)
 
-# Initialize the OpenAI language model
+# Initializing the OpenAI language model
 llm = OpenAI()
 
 instruction_prompt = """
@@ -83,10 +83,10 @@ def get_response(question):
     # Query the vector store for relevant documents
     relevant_docs = vector_store.similarity_search(prompt, k=3)
 
-    # Combine the content of the relevant documents
+    # Combining the content of the relevant documents
     context = " ".join([doc.page_content for doc in relevant_docs])
 
-   #Check if context is available and generate response based on context
+   #Checking if context is available and generate response based on context
      # Construct the full prompt with the instructions and context
     if context:
         prompt = f"{instruction_prompt}\n\nContext: {context}\n\nQuestion: {question}"
@@ -100,14 +100,14 @@ def get_response(question):
     return response
 
 
-# Define a model for storing chat history
+# Defining a model for storing chat history
 class ChatHistory(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     question = db.Column(db.String(500), nullable=False)
     answer = db.Column(db.String(5000), nullable=False)
     timestamp = db.Column(db.DateTime, default=db.func.current_timestamp())
 
-# Create the database and tables
+# Creating the database and tables
 with app.app_context():
     db.create_all()
 
@@ -151,7 +151,7 @@ def chat():
     question = data.get('question', '')
     response = get_response(question)
 
-    # Store question and response in the database
+    # Storing question and response in the database
     chat_history = ChatHistory(question=question, answer=response)
     db.session.add(chat_history)
     db.session.commit()
