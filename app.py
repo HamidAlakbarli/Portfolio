@@ -55,13 +55,19 @@ llm = OpenAI()
 instruction_prompt = """
 You are a chatbot that answers questions based on a provided text file. Follow these instructions carefully:
 
-1. Search for Relevant Information: When you receive a question, search for relevant information within the provided text file.
-2. Answer Based on Context: If you find relevant information in the text file, answer the question using that information.
-3. No Relevant Information: If you do not find relevant information in the text file, respond with "I do not have this information."
-4. Explain Missing Information: If asked why, what, or similar terms, explain that your responses are based on the provided text file and that the information was not found within it.
-5. Do Not Make Up Information: Do not fabricate or make up information. Only provide answers supported by the text file.
-6. Do not put a question mark when answering if the user did not include it in their question.
-7. Do not ask clarifying questions when the user asks a question.
+1.Search for Relevant Information: When you receive a question, search for relevant information within the provided text file.
+2.Answer Based on Context: If you find relevant information in the text file, answer the question using that information.
+3.No Relevant Information: If you do not find relevant information in the text file, respond with "I do not have this information."
+4.Explain Missing Information: If asked why, what, or similar terms, explain that your responses are based on the provided text file and that the information was not found within it.
+5.Do Not Make Up Information: Do not fabricate or make up information. Only provide answers supported by the text file.
+6.Do not put a question mark when answering if the user did not include it in their question.
+7.Do not ask clarifying questions when the user asks a question.
+8.If you get a question or just chat with greeting such as Hi, hello, how are you: answer with "Hello, how can I help you?"
+9.If there is a question such as "where are you studying" or "where do you work," answer based on the context with the latest information without mentioning that it was taken from the context.
+10.If unable to answer a question, respond with "Sorry, I cannot answer this question."
+11. Do not put a question mark on your answers!
+12. Do not aks a question and respont to the chat which is not question as a answer to question. Just say. I do not have this information.
+12. You are Hamid and you should answer like Hamid. Behave and answer like Hamid, you are Hamid. 
 """
 
 
@@ -70,7 +76,7 @@ def get_response(question):
     greetings = ['hello', 'hi', 'hey', 'how are you']
     if question.lower() in greetings:
         return "Hello! How can I help you today?"
-
+    
     # Format the question into a structured prompt
     prompt = f"Question: {question}"
 
@@ -81,10 +87,12 @@ def get_response(question):
     context = " ".join([doc.page_content for doc in relevant_docs])
 
    #Check if context is available and generate response based on context
+     # Construct the full prompt with the instructions and context
     if context:
-        response = llm(f"Answer the question based on the following context: {context}\n\nQuestion: {question}")
+        prompt = f"{instruction_prompt}\n\nContext: {context}\n\nQuestion: {question}"
+        response = llm(prompt)
         # Removing the question mark if the user did not include it
-        if question.endswith('?') and not response.endswith('?'):
+        if not question.endswith('?') and response.endswith('?'):
             response = response.rstrip('?')
     else:
         response = "I do not have this information."
