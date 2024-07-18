@@ -80,7 +80,7 @@ def get_response(question):
     # Combine the content of the relevant documents
     context = " ".join([doc.page_content for doc in relevant_docs])
 
-   # Check if context is available and generate response based on context
+   #Check if context is available and generate response based on context
     if context:
         response = llm(f"Answer the question based on the following context: {context}\n\nQuestion: {question}")
         # Removing the question mark if the user did not include it
