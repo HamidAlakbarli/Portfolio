@@ -2,55 +2,53 @@ import os
 from flask import Flask, request, jsonify, render_template, flash, redirect, url_for
 from flask_mail import Mail, Message
 from flask_sqlalchemy import SQLAlchemy
-from langchain_community.document_loaders import TextLoader
-from langchain_openai import OpenAIEmbeddings
-from langchain.vectorstores import Chroma
-from langchain.text_splitter import CharacterTextSplitter
 from dotenv import load_dotenv
-from langchain.llms import OpenAI
+from langchain_community.document_loaders import TextLoader
+from langchain_community.vectorstores import Chroma
+from langchain_text_splitters import CharacterTextSplitter
+from langchain_openai import OpenAIEmbeddings, OpenAI
 
-
-# Load environment variables from .env file
+# ---------- Init & Config ----------
 load_dotenv()
 
 app = Flask(__name__, instance_relative_config=True)
-app.secret_key = os.getenv('SECRET_KEY', 'default_secret_key')
+app.secret_key = os.getenv("SECRET_KEY", "default_secret_key")
 
-# Configuration for Flask-Mail
-app.config['MAIL_SERVER'] = 'smtp.gmail.com'
-app.config['MAIL_PORT'] = 465
-app.config['MAIL_USE_SSL'] = True
-app.config['MAIL_USE_TLS'] = False
-app.config['MAIL_USERNAME'] = os.getenv("MAIL_USERNAME")
-app.config['MAIL_PASSWORD'] = os.getenv("MAIL_PASSWORD")
-
+# Mail
+app.config["MAIL_SERVER"] = os.getenv("MAIL_SERVER", "smtp.gmail.com")
+app.config["MAIL_PORT"] = int(os.getenv("MAIL_PORT", "587"))
+app.config["MAIL_USE_TLS"] = os.getenv("MAIL_USE_TLS", "true").lower() == "true"
+app.config["MAIL_USE_SSL"] = os.getenv("MAIL_USE_SSL", "false").lower() == "true"
+app.config["MAIL_USERNAME"] = os.getenv("MAIL_USERNAME")
+app.config["MAIL_PASSWORD"] = os.getenv("MAIL_PASSWORD")
 mail = Mail(app)
 
-# Configuration for SQLAlchemy
-app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///chatbot.db'
-app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
-
+# DB (SQLite locally; Postgres on Heroku if provided)
+db_url = os.getenv("DATABASE_URL")
+if db_url and db_url.startswith("postgres://"):
+    db_url = db_url.replace("postgres://", "postgresql://", 1)
+app.config["SQLALCHEMY_DATABASE_URI"] = db_url or "sqlite:///chatbot.db"
+app.config["SQLALCHEMY_TRACK_MODIFICATIONS"] = False
 db = SQLAlchemy(app)
 
-# Seting OpenAI API key
+# OpenAI key
 os.environ["OPENAI_API_KEY"] = os.getenv("OPENAI_API_KEY")
 
-# Loading data from a text file
+# ---------- Data & RAG ----------
+# Load your context file
 loader = TextLoader("mydata.txt")
 documents = loader.load()
 
-# Spliting the documents into chunks
-text_splitter = CharacterTextSplitter(chunk_size=10, chunk_overlap=0)
+# Sensible chunk size to avoid warnings
+text_splitter = CharacterTextSplitter(chunk_size=800, chunk_overlap=100)
 texts = text_splitter.split_documents(documents)
 
-# Creating an embedding model
+# Embeddings + vector store
 embedding_model = OpenAIEmbeddings()
-
-# Creating a Chroma vector store
 vector_store = Chroma.from_documents(documents=texts, embedding=embedding_model)
 
-# Initializing the OpenAI language model
-llm = OpenAI()
+# LLM (completion-style)
+llm = OpenAI()  # or: OpenAI(model="gpt-3.5-turbo-instruct")
 
 instruction_prompt = """
 You are a chatbot that answers questions based on a provided text file. Follow these instructions carefully:
@@ -67,96 +65,105 @@ You are a chatbot that answers questions based on a provided text file. Follow t
 10.If unable to answer a question, respond with "Sorry, I cannot answer this question."
 11. Do not put a question mark on your answers!
 12. Do not aks a question and respont to the chat which is not question as a answer to question. Just say. I do not have this information.
-12. You are Hamid and you should answer like Hamid. Behave and answer like Hamid, you are Hamid. 
+12. You are Hamid and you should answer like Hamid. Behave and answer like Hamid, you are Hamid.
 """
 
-
-def get_response(question):
-    # Simple greetings handling
-    greetings = ['hello', 'hi', 'hey', 'how are you']
-    if question.lower() in greetings:
+def get_response(question: str) -> str:
+    # greetings
+    if question.lower().strip() in ["hello", "hi", "hey", "how are you"]:
         return "Hello! How can I help you today?"
-    
-    # Format the question into a structured prompt
+
     prompt = f"Question: {question}"
-
-    # Query the vector store for relevant documents
     relevant_docs = vector_store.similarity_search(prompt, k=3)
+    context = " ".join(d.page_content for d in relevant_docs)
 
-    # Combining the content of the relevant documents
-    context = " ".join([doc.page_content for doc in relevant_docs])
-
-   #Checking if context is available and generate response based on context
-     # Construct the full prompt with the instructions and context
     if context:
-        prompt = f"{instruction_prompt}\n\nContext: {context}\n\nQuestion: {question}"
-        response = llm(prompt)
-        # Removing the question mark if the user did not include it
-        if not question.endswith('?') and response.endswith('?'):
-            response = response.rstrip('?')
+        full = f"{instruction_prompt}\n\nContext: {context}\n\nQuestion: {question}"
+        resp = llm.invoke(full)  # returns str for OpenAI() wrapper
+        if not question.endswith("?") and isinstance(resp, str) and resp.endswith("?"):
+            resp = resp.rstrip("?")
+        return resp or "I do not have this information."
     else:
-        response = "I do not have this information."
+        return "I do not have this information."
 
-    return response
-
-
-# Defining a model for storing chat history
+# ---------- DB Model ----------
 class ChatHistory(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     question = db.Column(db.String(500), nullable=False)
     answer = db.Column(db.String(5000), nullable=False)
-    timestamp = db.Column(db.DateTime, default=db.func.current_timestamp())
+    timestamp = db.Column(db.DateTime, server_default=db.func.current_timestamp())
 
-# Creating the database and tables
 with app.app_context():
     db.create_all()
 
-@app.route('/')
+# ---------- Routes (same pages as before) ----------
+@app.get("/")
 def home():
-    return render_template('index.html')
+    return render_template("index.html")
 
-@app.route('/about')
+@app.get("/about")
 def about():
-    return render_template('about.html')
+    return render_template("about.html")
 
-@app.route('/activities')
+@app.get("/activities")
 def activities():
-    return render_template('activities.html')
+    return render_template("activities.html")
 
-@app.route('/portfolio')
+@app.get("/portfolio")
 def portfolio():
-    return render_template('portfolio.html')
+    return render_template("portfolio.html")
 
-@app.route('/contact', methods=['GET', 'POST'])
+@app.route("/contact", methods=["GET", "POST"])
 def contact():
-    if request.method == 'POST':
-        name = request.form['name']
-        email = request.form['email']
-        message = request.form['message']
+    if request.method == "POST":
+        name = request.form.get("name", "")
+        email = request.form.get("email", "")
+        message = request.form.get("message", "")
 
-        msg = Message(subject=f"Contact Form: {name}",
-                      sender=app.config['MAIL_USERNAME'],
-                      recipients=[app.config['MAIL_USERNAME']],
-                      body=f"Name: {name}\nEmail: {email}\n\nMessage:\n{message}")
-
+        msg = Message(
+            subject=f"Contact Form: {name}",
+            sender=app.config["MAIL_USERNAME"],
+            recipients=[app.config["MAIL_USERNAME"]],
+            body=f"Name: {name}\nEmail: {email}\n\nMessage:\n{message}",
+        )
         mail.send(msg)
-        flash('Message sent successfully!', 'success')
-        return redirect(url_for('contact'))
+        flash("Message sent successfully!", "success")
+        return redirect(url_for("contact"))
 
-    return render_template('contact.html')
+    return render_template("contact.html")
 
-@app.route('/chat', methods=['POST'])
+@app.post("/chat")
 def chat():
-    data = request.json
-    question = data.get('question', '')
-    response = get_response(question)
+    data = request.get_json(silent=True) or {}
+    question = (data.get("question") or "").strip()
+    answer = get_response(question) if question else "I do not have this information."
 
-    # Storing question and response in the database
-    chat_history = ChatHistory(question=question, answer=response)
-    db.session.add(chat_history)
-    db.session.commit()
+    try:
+        db.session.add(ChatHistory(question=question, answer=answer))
+        db.session.commit()
+    except Exception:
+        db.session.rollback()
+    return jsonify({"response": answer})
 
-    return jsonify({'response': response})
+@app.get("/ping")
+def ping():
+    return "pong"
 
-if __name__ == '__main__':
-    app.run(host='0.0.0.0', port=5000, debug=True)
+# ---------- Run (local fallback; Heroku uses PORT) ----------
+if __name__ == "__main__":
+    import socket
+
+    def free(p: int) -> bool:
+        with socket.socket(socket.AF_INET, socket.SOCK_STREAM) as s:
+            return s.connect_ex(("127.0.0.1", p)) != 0
+
+    env_port = os.environ.get("PORT")
+    if env_port:          
+        port = int(env_port)
+    else:                   
+        port = 5000 if free(5000) else 5001
+        if port == 5001:
+            print(" Port 5000 busy locally; using 5001")
+
+    debug = os.environ.get("FLASK_ENV") != "production"
+    app.run(debug=debug, host="0.0.0.0", port=port)

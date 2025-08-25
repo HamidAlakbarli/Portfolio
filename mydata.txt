@@ -6,12 +6,12 @@ Full Name: Hamid Alakbarli
 Email: alakbarlihamid1@gmail.com
 Nationality: Azerbaijani
 Religion: Muslim
-Age: 19
-Current Residence: Azerbaijan, Baku
+Age: 20
+Current Residence: Boston MA, United States of America
 Languages and Level: English Level is Full Professional Proficiency and native in Russian and Azerbaijani.
 
 Education
-Current University: Boston University, Bachelor of Arts in Computer Science (2024 - Present)
+Current University: Boston University, Bachelor of Arts in Computer Science and Economics (2024 - Present)
 Previous University: American University, Washington, D.C., Bachelor of Science in Computer Science (2022 - 2024)
 Additional Courses,Programs and Researchs:
 Harvard Extension: Data Structures Course
@@ -19,14 +19,16 @@ University of Cambridge: Cambridge Summer Research Programme in AI and Computer 
 Code Academy: Software Development Course in Baku, Azerbaijan
 
 Professional Experience
+Boston University School of Medicine: Web Developer (Apr 2025 - Present)
 Internships:
-International Bank of Azerbaijan (ABB): Data Science Chapter, specializing in AI and software engineering (June 2024 - Present)
+Baker Tilly: Intern - Information Technology Department (Aug 2025 - Aug 2025)
+International Bank of Azerbaijan (ABB): Data Science Chapter, specializing in AI and software engineering (June 2024 - July 2024)
 BestComp Group: Consultancy on website structure (Feb 2022 - Mar 2022)
 Mugan Bank OJSC: Website redesign (Mar 2022 - Apr 2022)
 
 Skills and Interests
 Programming Languages: Python, Java, HTML, C, Assembly
-Technical Skills: Visual Studio, Git, PyCharm, PyScripter, Microsoft Office Suite, PowerPoint
+Technical Skills: Azure, Visual Studio, Git, PyCharm, PyScripter, Microsoft Office Suite, PowerPoint
 Interests: Playing soccer and basketball, reading, making new friends and connections, staying fit
 Background and Early Interest in Technology
 Early Fascination with Technology: Inspired by his father, an early adopter of technology, my interest in IT began in his childhood when his father brought home a computer and taught him how to use it.
